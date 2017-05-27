@@ -11,7 +11,7 @@ import java.util.List;
  * @start 2013-11-08
  * @last 2014-10-22
  * @version 1.0
- * @author LXA
+ *
  */
 public class FileUtil
 {

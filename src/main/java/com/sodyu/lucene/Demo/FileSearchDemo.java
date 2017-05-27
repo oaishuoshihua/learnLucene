@@ -2,6 +2,7 @@ package com.sodyu.lucene.Demo;
 
 import com.sodyu.lucene.util.FileUtil;
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.TextField;
@@ -23,12 +24,12 @@ import java.nio.file.FileSystems;
 import java.util.List;
 
 /**
- * Created by yichunli on 2017/5/19.
+ * Created on 2017/5/19.
  */
 public class FileSearchDemo
 {
-	public static final String INDEX_PATH = "#"; // 存放Lucene索引文件的位置
-	public static final String SCAN_PATH = "#"; // 需要被扫描的位置，测试的时候记得多在这下面放一些文件
+	public static final String INDEX_PATH = "E:\\lucene\\indexs\\"; // 存放Lucene索引文件的位置
+	public static final String SCAN_PATH = "E:\\lucene\\originfile\\"; // 需要被扫描的位置，测试的时候记得多在这下面放一些文件
 	
 	/**
 	 * 创建索引
@@ -40,8 +41,8 @@ public class FileSearchDemo
 		try
 		{
 			directory = FSDirectory.open(FileSystems.getDefault().getPath(INDEX_PATH));
-			//Analyzer analyzer = new StandardAnalyzer();
-			Analyzer analyzer = new IKAnalyzer(true);
+//			Analyzer analyzer = new StandardAnalyzer();
+			Analyzer analyzer = new IKAnalyzer(false);
 			IndexWriterConfig indexWriterConfig = new IndexWriterConfig(analyzer);
 			indexWriter = new IndexWriter(directory, indexWriterConfig);
 			indexWriter.deleteAll();// 清除以前的index
@@ -91,7 +92,7 @@ public class FileSearchDemo
 			// 3、根据IndexReader创建IndexSearch
 			IndexSearcher indexSearcher = new IndexSearcher(directoryReader);
 			// 4、创建搜索的Query
-			// Analyzer analyzer = new StandardAnalyzer();
+//			 Analyzer analyzer = new StandardAnalyzer();
 			Analyzer analyzer = new IKAnalyzer(true); // 使用IK分词
 			
 			// 简单的查询，创建Query表示搜索域为content包含keyWord的文档
@@ -149,7 +150,7 @@ public class FileSearchDemo
 	public static void main(String args[])
 	{
 		FileSearchDemo demo = new FileSearchDemo();
-		//demo.creatIndex();
-		demo.search("LUCENE");
+		demo.creatIndex();
+		demo.search("博客");
 	}
 }

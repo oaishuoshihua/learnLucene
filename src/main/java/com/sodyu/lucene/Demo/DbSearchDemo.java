@@ -22,7 +22,7 @@ import java.nio.file.FileSystems;
 import java.sql.ResultSet;
 
 /**
- * Created by yichunli on 2017/5/19.
+ * Created  on 2017/5/19.
  */
 public class DbSearchDemo
 {

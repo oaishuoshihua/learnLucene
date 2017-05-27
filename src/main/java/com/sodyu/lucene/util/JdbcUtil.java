@@ -25,7 +25,7 @@ import java.sql.*;
  * @start 2012年某月某日
  * @last 2014年7月3日
  * @version 1.0
- * @author LXA
+ *
  */
 public class JdbcUtil
 {
