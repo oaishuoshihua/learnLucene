@@ -1,4 +1,4 @@
-package com.sodyu.lucene.Demo;
+package com.sodyu.lucene.demo;
 
 import com.sodyu.lucene.util.JdbcUtil;
 import org.apache.lucene.analysis.Analyzer;

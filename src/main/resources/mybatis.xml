@@ -7,13 +7,13 @@
 			<transactionManager type="JDBC" />
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://pub.mysql.db.dev.sh.ctripcorp.com:28747/TTDCrawlerDB?autoReconnect=true" />
-                <property name="username" value="us_dev_liqm" />
-                <property name="password" value="liqm!2016" />
+                <property name="url" value="jdbc:mysql://localhost:3306/ttdsearchdb?serverTimezone=UTC" />
+                <property name="username" value="root" />
+                <property name="password" value="sodyu" />
             </dataSource>
 		</environment>
 	</environments>
 	<mappers>
-        <package name="ttd.crawler.appium.dal.dao"></package>
+        <package name="com.sodyu.lucene.dal.dao"></package>
     </mappers>
 </configuration>

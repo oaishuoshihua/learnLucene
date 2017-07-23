@@ -19,7 +19,7 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="ttd.crawler.appium.dal.entity"
+        <javaModelGenerator targetPackage="com.sodyu.lucene.dal.entity"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
@@ -29,13 +29,13 @@
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
         <!--ANNOTATEDMAPPER XMLMAPPER-->
-        <javaClientGenerator targetPackage="com.sodyu.lucene.dao" type="ANNOTATEDMAPPER"
+        <javaClientGenerator targetPackage="com.sodyu.lucene.dal.dao" type="ANNOTATEDMAPPER"
                              targetProject="src/main/java">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
 
-        <table tableName="searchdemo" domainObjectName="SearchDemoEntity">
+        <table tableName="demo" domainObjectName="SearchDemoEntity">
             <property name="useActualColumnNames" value="true"/>
         </table>
     </context>
