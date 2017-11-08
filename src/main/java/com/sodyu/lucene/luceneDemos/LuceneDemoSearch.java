@@ -23,8 +23,8 @@ import java.nio.file.FileSystems;
 public class LuceneDemoSearch {
     private static Logger logger = LoggerFactory.getLogger(LuceneDemoSearch.class);
     private static Directory directory=null;
-    private static IndexSearcher indexSearcher = null;
-    private static DirectoryReader directoryReader = null;
+    public static IndexSearcher indexSearcher = null;
+    public static DirectoryReader directoryReader = null;
 
     /**
      * 创建indexSearch
@@ -178,10 +178,10 @@ public class LuceneDemoSearch {
 
 
     public static void main(String[] args) {
-//        LuceneDemoCreateIndex.createIndex();
-        LuceneDemoSearch search=new LuceneDemoSearch();
-        Query query=search.getQuery(QueryEnums.SPANFIRSTQUERY.code);
-        search.Search(query);
+        LuceneDemoCreateIndex.createIndex();
+//        LuceneDemoSearch search=new LuceneDemoSearch();
+//        Query query=search.getQuery(QueryEnums.SPANFIRSTQUERY.code);
+//        search.Search(query);
     }
 
 }
